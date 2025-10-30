@@ -1,4 +1,4 @@
-Arquivo Gerado ao Rodar no Navegador
+Arquivo Gerado ao Rodar no Navegador Cole esse endpoint http://localhost:8000/characters/csv para gerar o arquivo csv
 
 O sistema gera automaticamente um arquivo CSV, conforme demonstrado abaixo:
 
