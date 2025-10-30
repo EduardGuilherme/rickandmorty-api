@@ -1,4 +1,59 @@
-Arquivo Gerado ao Rodar no Navegador Cole esse endpoint http://localhost:8000/characters/csv para gerar o arquivo csv
+
+Tecnologias Utilizadas
+
+Python 3.10+
+
+Flask
+
+Requests
+
+CSV
+
+Virtualenv
+
+
+Clone o repositório
+git clone https://github.com/EduardGuilherme/rickandmorty-api.git
+cd rickandmorty-api
+
+Criar e ativar o ambiente virtual
+
+python -m venv .venv
+
+No Windows:
+
+.venv\Scripts\activate
+
+No Linux/Mac:
+
+source .venv/bin/activate
+
+Instalar as dependências
+
+pip install flask requests
+
+Rodar o servidor Flask
+
+python app.py
+
+
+O servidor será iniciado em:
+
+http://localhost:8000
+
+para ver a lista completa 
+
+http://localhost:8000/characters
+
+para ver a lista por paginas 
+
+http://localhost:8000/characters?limit=1&page=1
+
+5️⃣ Gerar o arquivo CSV
+
+Para gerar o arquivo, acesse no navegador:
+
+Cole esse endpoint http://localhost:8000/characters/csv para gerar o arquivo csv
 
 O sistema gera automaticamente um arquivo CSV, conforme demonstrado abaixo:
 
