@@ -42,6 +42,15 @@ def fetch_characters(limit=TARGET_COUNT, start_page=1):
 
     return resultados[:limit]
 
+def generate_csv(personagens):
+    buffer = io.StringIO()
+    writer = csv.writer(buffer, delimiter=';')
+    writer.writerow(["id","name","status","species","type","gender"])
+    for p in personagens:
+        writer.writerow([p.get("id"), p.get("name"), p.get("status"), p.get("species"), p.get("type"), p.get("gender")])
+    return buffer.getvalue()
+
+
 @app.route("/characters", methods=["GET"])
 def characters_json():
     limit = int(request.args.get("limit", TARGET_COUNT))
@@ -50,6 +59,12 @@ def characters_json():
     characters = fetch_characters(limit=limit, start_page=page)
 
     return jsonify(characters)
+
+@app.route("/characters/csv")
+def characters_csv():
+    csv_text = generate_csv(fetch_characters())
+    return Response(csv_text, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=personagens.csv"})
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
